@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+
+.Container-sidebar {
+ display: flex;
+}
+
+.Container {
+ width: 100px;
+ background-color: red;
+ overflow: hidden;
+}
+
+.Sidebar {
+ width: 225px;
+}
+/* 
+.NavLink{
+    margin-top: 20px;
+    margin-top: 20px;
+} */
+
+.Brand {
+ padding: 25px;
+ font-size: 30px;
+}
+
+.Link {
+ display: flex;
+ justify-content: start;
+ width: 100%;
+ padding: 20px 70px 20px 10px;
+ font-size: 18px;
+ font-family: "poppins", sans-serif;
+ color: #000;
+}
+
+.Link:hover {
+ border-left: 6px solid #5778d8;
+ color: #5778d8;
+}
+
+.Link .Icon {
+ padding-right: 15px;
+}
+
+.Ticket,
+.Board,
+.Dashboard {
+ /* background-color: red; */
+ display: flex;
+ justify-content: center;
+ /* align-items: center; */
+ position: absolute;
+ top: 0;
+ left: 225px;
+ right: 0;
+ bottom: 0;
+ /* background-color: red; */
+ overflow-y: hidden;
+ /* min-height: 100vh; */
+}
+
+.table {
+ /* border: 5px solid black; */
+ margin: auto;
+ margin-top: 40px;
+ width: 90%;
+}
+
+.table thead {
+ margin: auto;
+}
+
+.Section {
+ /* display: flex; */
+ /* justify-content: center; */
+ /* align-items: center; */
+ margin-top: 40px;
+ background-color: blueviolet;
+ border-radius: 35px 35px 0px 0px;
+ width: 80%;
+ /* height: 100vh; */
+}
+
+.Dashboard .Dashboard-header .Ellipse {
+    background-color: #5778d8;
+    border-radius: 12.5px;
+    height: 25px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 25px;
+    }
