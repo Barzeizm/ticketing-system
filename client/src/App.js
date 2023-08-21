@@ -5,13 +5,17 @@ import {
  Routes,
 } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css"
 import Dashboard from "./pages/Dashboard";
 import Ticket from "./pages/Ticket";
 import Board from "./pages/Board";
 import Sidebar from "./components/Sidebar";
+import Navbar from "./components/Navbar";
 
 function App() {
  return (
+  <>
+  <Navbar/>
   <Router>
       <Sidebar>
         <Routes>
@@ -21,6 +25,7 @@ function App() {
         </Routes>
       </Sidebar>
     </Router>
+  </>
   
  );
 }
