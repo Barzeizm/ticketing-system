@@ -4,7 +4,6 @@ import { Container, Table } from "react-bootstrap";
 const Board = () => {
  return (
   <>
-   <div className='Container'>
     <div className='Board'>
      <div className='Section'>
       <table className='table table-bordered'>
@@ -70,7 +69,6 @@ const Board = () => {
       </table>
      </div>
     </div>
-   </div>
   </>
  );
 };

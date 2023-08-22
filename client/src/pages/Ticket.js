@@ -3,9 +3,10 @@ import { Container, Table } from "react-bootstrap";
 
 const Ticket = () => {
  return (
-  <div className='Container'>
+  <div className=''>
    <div className='Ticket'>
     <div className='Section'>
+        <div className="Section-header"></div>
      <Table striped bordered hover size='sm' variant='dark'>
       <thead className='rounded-10 text-center'>
        <tr>
