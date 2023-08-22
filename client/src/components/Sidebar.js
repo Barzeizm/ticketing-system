@@ -31,8 +31,10 @@ const Sidebar = ({ children }) => {
      <NavLink
       to={item.path}
       key={index}
-      className='mt-5 text-decoration-none'
-      activeclassName='active'
+      className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "active" : ""
+  }
+      activeclassName='is-active'
      >
       <div className='Link'>
        <div className='Icon'>{item.icon}</div>

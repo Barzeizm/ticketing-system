@@ -10,7 +10,7 @@ import Dashboard from "./pages/Dashboard";
 import Ticket from "./pages/Ticket";
 import Board from "./pages/Board";
 import Sidebar from "./components/Sidebar";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Header";
 
 function App() {
  return (

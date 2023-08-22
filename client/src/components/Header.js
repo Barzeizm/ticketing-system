@@ -1,10 +1,10 @@
 import React from "react";
 import "../App.css"
 
-const Navbar = () => {
+const Header = () => {
  return (
   <>
-   <div className='Navbar'>
+   <div className='Header'>
     <div className='Ellipse-1'></div>
     <div className='Ellipse-2'></div>
     <div className='Ellipse-3'></div>
@@ -14,4 +14,4 @@ const Navbar = () => {
  );
 };
 
-export default Navbar;
+export default Header;

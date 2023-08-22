@@ -15,6 +15,7 @@ body {
 }
 
 .Sidebar {
+ z-index: 3;
  background-color: #fff;
  width: 225px;
  box-shadow: 2px 0px 10px 2px #000;
@@ -62,7 +63,7 @@ body {
  right: 0;
  bottom: 0;
  /* background-color: red; */
- overflow-y: hidden;
+ overflow-y: scroll;
  /* min-height: 100vh; */
 }
 
@@ -88,7 +89,8 @@ body {
  /* height: 100vh; */
 }
 
-.Navbar {
+.Header {
+ z-index: 2;
  display: flex;
  align-items: center;
  position: absolute;
@@ -102,25 +104,25 @@ body {
  box-shadow: 6px 0px 10px 2px #000;
 }
 
-.Navbar .Ellipse-1 {
- width: 28px;
- height: 28px;
+.Header .Ellipse-1 {
+ width: 18px;
+ height: 18px;
  border-radius: 50%;
  background-color: #5778d8;
  margin-left: 50px;
 }
 
-.Navbar .Ellipse-2 {
- width: 38px;
- height: 38px;
+.Header .Ellipse-2 {
+ width: 28px;
+ height: 28px;
  border-radius: 50%;
  background-color: #2f58cd;
  margin-left: 5px;
 }
 
-.Navbar .Ellipse-3 {
- width: 48px;
- height: 48px;
+.Header .Ellipse-3 {
+ width: 38px;
+ height: 38px;
  border-radius: 50%;
  background-color: #7415ea;
  margin-left: 5px;
@@ -129,54 +131,153 @@ body {
  padding-left: 10px;
 }
 
+/* CARD */
+
 .Card {
  display: flex;
+ flex-wrap: wrap;
  /* justify-content: space-evenly; */
 }
 
-.OpenTickets {
-    /* display: flex; */
- /* position: absolute;
- top: 120px; */
- width: 260px;
- height: 140px;
- background-color: red;
- margin: 50px 20px 20px 50px;
- border-radius: 10px;
-}
-
-.OpenTickets .OpenData,.OpenTitle{
-    display: flex;
-    justify-content: center;
-}
-
-.InprogressTickets {
- /* position: absolute;
- top: 120px; */
- gap: 1em;
- width: 260px;
- height: 140px;
- background-color: brown;
- margin: 50px 20px 20px 50px;
- border-radius: 10px;
-}
-.ClosedTickets {
- /* position: absolute;
- top: 120px; */
- gap: 1em;
- width: 260px;
- height: 140px;
- background-color: green;
- margin: 50px 20px 20px 50px;
- border-radius: 10px;
-}
+.OpenTickets,
+.InprogressTickets,
+.ClosedTicket,
 .WarningTickets {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ /* gap: 0.5rem; */
  /* position: absolute;
  top: 120px; */
- gap: 1em;
- width: 260px;
+ width: 290px;
  height: 140px;
- background-color: red;
- margin: 50px 20px 20px 50px;
+ background-color: #fff;
+ margin: 20px 20px 20px 29px;
  border-radius: 10px;
+}
+
+.OpenTickets .OpenData,
+.InprogressTickets .InprogressData,
+.ClosedTicket .ClosedData,
+.WarningTickets .WarningData {
+ display: flex;
+ justify-content: center;
+}
+
+.OpenTickets .OpenData .DataIcon {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: #36b22b;
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ background-color: #ccf5c5;
+ font-size: 32px;
+ margin: 0 5px 0 20px;
+}
+
+.InprogressTickets .InprogressData .DataIcon {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: #3490e4;
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ background-color: #b1d5f6;
+ font-size: 32px;
+ margin: 0 5px 0 20px;
+}
+
+.ClosedTicket .ClosedData .DataIcon {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: #CF3B3B;
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ background-color: #F4C4C4;
+ font-size: 32px;
+ margin: 0 5px 0 20px;
+}
+
+.WarningTickets .WarningData .DataIcon {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: #D3CC2A;
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ background-color: #F6F3B1;
+ font-size: 32px;
+ margin: 0 5px 0 20px;
+}
+
+.OpenTickets .OpenData .Data,
+.InprogressTickets .InprogressData .Data, .ClosedTicket .ClosedData .Data, .WarningTickets .WarningData .Data {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin: 0 20px 0 5px;
+ font-size: 32px;
+ font-family: "poppins", sans-serif;
+}
+
+.OpenTitle {
+ font-size: 24px;
+}
+
+.Chart {
+ background-color: #fff;
+ width: 71%;
+ height: 420px;
+ margin: 10px 10px 20px 30px;
+ border-radius: 10px;
+}
+
+.TicketDone {
+ background-color: #fff;
+ width: 300px;
+ height: 200px;
+ margin: 10px 10px 20px 30px;
+ border-radius: 10px;
+}
+
+/* CARD END */
+
+/* Table DAshboard */
+
+.Table-Container {
+ background-color: #fff;
+ width: 96%;
+ margin: 10px 20px 20px 30px;
+ border-radius: 10px;
+}
+
+.Table-Header {
+ display: flex;
+ justify-content: space-between;
+}
+
+.Table-Header h5 {
+ padding: 20px;
+ margin: 0;
+}
+
+.Table-Header select {
+ margin: 20px 30px 20px 20px;
+}
+
+.Table-Container table tr td {
+ padding: 0px 200px 15px 20px;
+}
+
+/* Table Dashboard End */
+
+a.active{
+    background-color: red;
 }
