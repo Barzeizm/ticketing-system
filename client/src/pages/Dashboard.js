@@ -1,19 +1,18 @@
 import React from "react";
 import "../App.css";
 import CardData from "../components/CardData";
+import Header from "../components/Header";
+import Sidebar from "../components/Sidebar";
 
 const Dashboard = () => {
     return (
         <>
+            <Header title='Dashboard' />
+            <Sidebar/>
             <div className='Dashboard'>
-                <div className='Dashboard-header'>
-                    <div className='Ellipse-1'></div>
-                    <div className='Ellipse-2'></div>
-                    <div className='Ellipse-3'></div>
-                </div>
                 <CardData />
-                <div className='Table-Container'>
-                    <div className='Table-Header'>
+                <div className='Table-Dashboard'>
+                    <div className='Table-Header-Dashboard'>
                         <h5>Ticket List</h5>
                         <select>
                             <option>Sort By</option>

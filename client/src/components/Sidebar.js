@@ -5,6 +5,7 @@ import "../App.css";
 import { GoHome } from "react-icons/go";
 import { AiOutlineUnorderedList } from "react-icons/ai";
 import { BsFileEarmarkText } from "react-icons/bs";
+import {TbReportAnalytics} from "react-icons/tb"
 
 const Sidebar = ({ children }) => {
     return (
@@ -23,10 +24,15 @@ const Sidebar = ({ children }) => {
                     <BsFileEarmarkText className="icon-sidebar"/>
                     Board
                 </NavLink>
-                <NavLink to='/board'>
-                    <BsFileEarmarkText className="icon-sidebar"/>
-                    MEE
+                <NavLink to='/reports'>
+                    <TbReportAnalytics className="icon-sidebar"/>
+                    Reports
                 </NavLink>
+                <div className="Login-btn-sidebar">
+                    <NavLink to='/login'>
+                        Login
+                    </NavLink>
+                </div>
             </nav>
             <main>{children}</main>
         </div>

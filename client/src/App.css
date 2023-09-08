@@ -1,24 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 
-body {
-    background-color: #2f58cd;
+:root {
+    --biru-utama: #2f58cd;
+    --biru-kedua: #5778d8;
+    --hitam: #000000;
+    --abu: #d9d9d9;
+    --putih: #ffffff;
 }
+
+body {
+    background-color: var(--abu);
+}
+
+/* Sidebar Begin */
 
 .Container-sidebar {
     display: flex;
 }
 
 .Container {
-    width: 100px;
+    /* width: 100px; */
     /* background-color: blue; */
     overflow: hidden;
 }
 
 .Sidebar {
     z-index: 3;
-    background-color: #fff;
+    background-color: var(--putih);
     width: 225px;
-    box-shadow: 2px 0px 10px 2px #000;
+    box-shadow: 2px 0px 10px 2px var(--hitam);
 }
 
 .Container-sidebar .Sidebar a {
@@ -26,29 +36,28 @@ body {
     align-items: center;
     justify-content: start;
     width: 100%;
-    padding: 20px 70px 20px 10px;
-    font-size: 18px;
+    padding: 15px 70px 15px 10px;
+    font-size: 16px;
+    font-weight: bold;
     font-family: "poppins", sans-serif;
-    color: #000;
+    color: var(--hitam);
     text-decoration: none;
 }
 
-.Container-sidebar nav .icon-sidebar{
-    font-size: ;
+.Container-sidebar nav .icon-sidebar {
+    font-size: 20px;
     margin-right: 20px;
 }
 
-.Container-sidebar nav a:hover{
-    border-left: 6px solid #5778d8;
-    color: #5778d8;
+.Container-sidebar nav a:hover {
+    border-left: 6px solid var(--biru-kedua);
+    color: var(--biru-kedua);
 }
 .Container-sidebar nav a.active {
-    border-left: 6px solid #5778d8;
-    background-color: #d9d9d9;
-    color: #5778d8;
+    border-left: 6px solid var(--biru-kedua);
+    background-color: var(--abu);
+    color: var(--biru-kedua);
 }
-
-
 
 /* 
 .NavLink{
@@ -57,23 +66,28 @@ body {
 } */
 
 .Brand {
-    padding: 25px;
+    padding: 20px;
     font-size: 30px;
 }
 
 .Link:hover {
-    border-left: 6px solid #5778d8;
-    color: #5778d8;
+    border-left: 6px solid var(--biru-kedua);
+    color: var(--biru-kedua);
 }
 
 .Link .Icon {
     padding-right: 15px;
 }
+/* SideBar End */
 
+/* Main Begin */
+.Dashboard,
 .Ticket,
+.TicketDetailPage,
+.AddTickets,
 .Board,
-.Dashboard {
-    background-color: blue;
+.Reports {
+    /* background-color: blue; */
     /* display: flex; */
     /* justify-content: center; */
     /* align-items: center; */
@@ -87,28 +101,19 @@ body {
     /* min-height: 100vh; */
 }
 
-.table {
-    /* border: 5px solid black; */
-    margin: auto;
-    margin-top: 40px;
-    width: 90%;
+.Dashboard::-webkit-scrollbar,
+.Ticket::-webkit-scrollbar,
+.TicketDetailPage::-webkit-scrollbar,
+.AddTickets::-webkit-scrollbar,
+.Board::-webkit-scrollbar,
+.Reports::-webkit-scrollbar {
+    display: none;
 }
+/* Main End */
 
-.table thead {
-    margin: auto;
-}
+/* TicketPage Begin */
 
-.Section {
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    margin-top: 40px;
-    background-color: blueviolet;
-    border-radius: 35px 35px 0px 0px;
-    width: 80%;
-    /* height: 100vh; */
-}
-
+/* Header Begin */
 .Header {
     z-index: 2;
     display: flex;
@@ -121,14 +126,14 @@ body {
     background-color: #fff;
     width: 85.8%;
     height: 80px;
-    box-shadow: 6px 0px 10px 2px #000;
+    box-shadow: 6px 0px 10px 2px var(--hitam);
 }
 
 .Header .Ellipse-1 {
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background-color: #5778d8;
+    background-color: var(--biru-kedua);
     margin-left: 50px;
 }
 
@@ -136,7 +141,7 @@ body {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background-color: #2f58cd;
+    background-color: var(--biru-utama);
     margin-left: 5px;
 }
 
@@ -150,6 +155,83 @@ body {
 .Nav-Title {
     padding-left: 10px;
 }
+/* Header End */
+
+/* LOGIN Start */
+
+.LoginRegisterContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(109.6deg, rgb(31, 179, 237) 11.2%, rgb(17, 106, 197) 91.1%);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.LoginRegister {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* background-color: #000000; */
+    width: 1000px;
+    height: 60vh;
+}
+
+.ButtonRegister {
+    display: flex;
+    transform: translateX(35%);
+    transition: transform 0.6s ease-in-out;
+}
+
+.ButtonRegister button {
+    width: 240px;
+}
+
+.RegisterBtnActive {
+    transform: translateX(285%);
+}
+
+.LoginRegister .LoginForm,
+.LoginRegister .RegisterForm {
+    /* flex: 1; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX();
+    /* background: linear-gradient(109.6deg, rgb(31, 179, 237) 11.2%, rgb(17, 106, 197) 91.1%); */
+    background-color: #ffffff;
+    width: 600px;
+    height: 80vh;
+}
+
+.LoginForm form,
+.RegisterForm form {
+    padding: 30px;
+    width: 85%;
+}
+
+.BtnLoginRegister {
+    display: flex;
+    justify-content: center;
+}
+
+.BtnLoginRegister button {
+    padding: 10px 120px;
+}
+
+.FormContainer {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.6s ease-in-out;
+}
+
+.FormContainerShifted {
+    z-index: 1;
+    transform: translateX(-67%);
+}
+/* LOGIN End */
 
 /* CARD */
 
@@ -173,8 +255,10 @@ body {
     width: 290px;
     height: 140px;
     background-color: #fff;
-    margin: 20px 20px 20px 29px;
+    margin: 20px auto;
+    /* margin: 20px 20px 20px 29px; */
     border-radius: 10px;
+    box-shadow: 3px 5px 20px 5px rgba(217, 217, 217, 0.5), 3px 5px 9px 0px rgba(0, 0, 0, 0.79);
 }
 
 .OpenTickets .OpenData,
@@ -257,49 +341,349 @@ body {
     background-color: #fff;
     width: 71.8%;
     height: 420px;
-    margin: 10px 10px 20px 30px;
+    margin: 20px 25px;
+    /* margin: 10px 10px 20px 30px; */
     border-radius: 10px;
+    box-shadow: 3px 5px 20px 5px rgba(217, 217, 217, 0.5), 3px 5px 9px 0px rgba(0, 0, 0, 0.79);
 }
 
 .TicketDone {
     background-color: #fff;
     width: 290px;
     height: 200px;
-    margin: 10px 10px 20px 30px;
+    margin: 20px 15px;
+    /* margin: 15px 45px 25px 0px; */
     border-radius: 10px;
+    box-shadow: 3px 5px 20px 5px rgba(217, 217, 217, 0.5), 3px 5px 9px 0px rgba(0, 0, 0, 0.79);
 }
-
 /* CARD END */
 
-/* Table DAshboard */
+/* Table Dashboard */
 
-.Table-Container {
+.Table-Dashboard {
     background-color: #fff;
     width: 96%;
     margin: 10px 20px 20px 30px;
     border-radius: 10px;
+    box-shadow: 3px 5px 20px 5px rgba(217, 217, 217, 0.5), 3px 5px 9px 0px rgba(0, 0, 0, 0.79);
 }
 
-.Table-Header {
+.Table-Header-Dashboard {
     display: flex;
     justify-content: space-between;
 }
 
-.Table-Header h5 {
+.Table-Header-Dashboard h5 {
     padding: 20px;
     margin: 0;
 }
 
-.Table-Header select {
+.Table-Header-Dashboard select {
     margin: 20px 30px 20px 20px;
 }
 
-.Table-Container table tr td {
+.Table-Dashboard table tr td {
     padding: 0px 200px 15px 20px;
 }
-
 /* Table Dashboard End */
 
-a.active {
-    background-color: red;
+.Ticketinfo {
+    background-color: #fff;
+    width: 94%;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.Ticketinfo table {
+    width: 100%;
+}
+
+.Ticketinfo table tr td {
+    padding: 15px;
+}
+
+.Ticketinfo table tbody a {
+    text-decoration: none;
+}
+
+.Ticketinfo-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.Ticketinfo-header .Ticketinfo-header-left {
+    font-size: 20px;
+    font-family: "poppins", sans-serif;
+}
+
+.Ticketinfo-header .Ticketinfo-header-right .btn-ticketinfo .btn-icon {
+    margin-right: 20px;
+}
+
+.Ticketinfo-header .Ticketinfo-header-right .btn-ticketinfo {
+    /* display: flex; */
+    background-color: rgba(109, 139, 221, 0.79);
+    margin: auto 20px;
+    width: 155px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.79);
+    border-radius: 5px;
+    /* width: 90px; */
+}
+
+.Ticketinfo-header .Ticketinfo-header-right .sort-filter {
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.ticketinfo-search {
+    width: 95%;
+    margin: auto;
+}
+
+.ticketinfo-search form input {
+    width: 100%;
+    border-radius: 5px;
+    /* border-inline: none; */
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.79);
+    /* border: none; */
+}
+
+.ticketinfo-search form input:focus {
+    border: 1px solid rgba(0, 0, 0, 0.79);
+    outline-offset: 0px;
+    outline: none;
+    /* background-color: red; */
+}
+
+/* Ticket END */
+
+/* TicketDetail BEGIN */
+
+.TicketDetail {
+    background-color: #fff;
+    width: 94%;
+    margin: 20px auto;
+    border-radius: 10px;
+    height: 100vh;
+    /* padding:10px 0px 20px 10px; */
+    /* border-bottom: 2px solid black; */
+}
+
+.HeaderTicketDetail {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+    padding: 20px;
+}
+
+.BtnTicketDetailEdit {
+    padding: 20px;
+}
+
+.BtnTicketDetailEdit button {
+    border: none;
+}
+
+.TicketName {
+    font-size: 20px;
+    font-family: "poppins", sans-serif;
+    padding: 0px 0px 5px 10px;
+}
+
+.TicketDetailSection {
+    display: flex;
+    justify-content: start;
+    column-gap: 1em;
+    background-color: #d9d9d9;
+    width: 130px;
+}
+
+.TicketDetailMain {
+    padding: 20px;
+}
+
+.TicketDetailDesc {
+    font-size: 18px;
+}
+
+/* AddTicket BEGIN */
+
+.Add {
+    background-color: #fff;
+    width: 94%;
+    /* height: 100%; */
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.Add .AddHeader {
+    padding: 20px;
+    border-bottom: 2px solid var(--black);
+}
+
+.Add .AddForm .DueDate {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Add .AddForm .SelectForm {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Add .AddForm .SelectForm .AssigneeTicketSelect,
+.Add .AddForm .SelectForm .PriorityTicket {
+    width: 50%;
+}
+
+.Add .AddForm .AddTicketButton {
+    display: flex;
+    justify-content: start;
+    padding-bottom: 20px;
+}
+
+.Add .AddForm .AddTicketButton .SubmitSection button,
+.Add .AddForm .AddTicketButton .CancelSection button {
+    margin-right: 30px;
+    width: 120px;
+}
+
+/* BoardPage Begin */
+.Board-content {
+    background-color: #ffffff;
+    margin: 20px 0 0 30px;
+    width: 94%;
+    height: 500px;
+    border-radius: 10px;
+    /* border: 2px solid black; */
+}
+
+.Board-content table {
+    /* text-align: center; */
+    text-align: center;
+    width: 100%;
+}
+
+.Board-content table thead {
+    /* border-bottom: 2px solid black; */
+}
+
+.Board-content table thead tr .not-started {
+    background-color: #f6f3b1;
+    border-radius: 5px;
+    margin: 10px 20px;
+    padding: 10px 0 10px 0;
+    border-bottom: 8px solid #2f58cd;
+}
+.Board-content table thead tr .in-progress {
+    background-color: #b1d5f6;
+    border-radius: 5px;
+    margin: 10px 20px;
+    padding: 10px 0 10px 0;
+}
+.Board-content table thead tr .done {
+    background-color: #ccf5c5;
+    border-radius: 5px;
+    margin: 10px 20px;
+    padding: 10px 0 10px 0;
+}
+
+.Board-content table tr td {
+    width: 200px;
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    /* border: 1px solid black; */
+}
+
+.Card-board {
+    background-color: #f6f3b1;
+    /* border: 1px solid black; */
+    border-radius: 18px;
+    width: 100%;
+    height: 200px;
+    /* padding: 160px; */
+}
+
+.Card-board .title {
+    display: flex;
+    align-items: start;
+    width: 100%;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 16px;
+    border-bottom: 2px solid var(--hitam);
+}
+.Card-board .description {
+    display: flex;
+    align-items: start;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+.Card-board .comment {
+}
+
+.Card-board .comment textarea {
+    background-color: transparent;
+    display: flex;
+    resize: none;
+    width: 90%;
+    height: 80px;
+    margin: 10px;
+    border: none;
+    border: 1px solid black;
+}
+
+.Card-board-inprogress {
+    background-color: #b1d5f6;
+    /* border: 1px solid black; */
+    border-radius: 18px;
+    width: 100%;
+    height: 150px;
+    /* padding: 160px; */
+}
+.Card-board-done {
+    background-color: #ccf5c5;
+    /* border: 1px solid black; */
+    border-radius: 18px;
+    width: 100%;
+    height: 150px;
+    /* padding: 160px; */
+}
+
+/* REPORTS */
+
+/* .ReportList {
+    background-color: #ffffff;
+    margin: 20px 0 0 30px;
+    width: 94%;
+    height: 500px;
+    border-radius: 10px;
+} */
+
+.ReportList {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ReportList .TicketSubmission {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    background-color: #ffffff;
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 5px 20px 5px rgba(217, 217, 217, 0.5), 3px 5px 9px 0px rgba(0, 0, 0, 0.79);
+}
+
+.TicketSubmission .title {
+    padding-bottom: 40px;
 }
