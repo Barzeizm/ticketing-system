@@ -83,15 +83,57 @@
 //     deleteUser,
 // };
 
+require('dotenv').config();
+//const express = require('express')
+const User = require('../models/users.model');
+const bcryptjs = require('bcryptjs');
+const jsonwebtoken = require('jsonwebtoken');
+//const { query } = require('express-validator');
+//import User from "../models/UserModels.js";
 
-import User from "../models/UserModels.js";
+//exports.RegisterUser = async (req, res) => {                                                                                                                                                                                                                                                                                                = async (req, res) => {
+    const { username, email, password } = req.body
 
-export const getUsers = async(req, res) =>{
-    try {
-        const response = await User.findAll();
-        // res.header("Access-Control-Allow-Origin", "*");
-        res.status(200).json(response);
-    } catch (error) {
-        console.log(error.message);
+    const emailUser = await User.findone({email: email})
+    const usernameuser = await User.findOne({username: username})
+    
+    if(emailUser) {
+        return res.status(404).json({
+            status: false,
+            message: 'email sudah tersedia'
+        })
     }
-}
+
+    if(usernameuser) {
+        return res.status(404).json({
+            status: false,
+            message: 'username sudah tersedia'
+        })
+    }
+
+    const hashPassword = await bcryptjs.hash(password, 10)
+    const user = new User({
+        username: username,
+        email: email,
+        password: hashPassword,
+    })
+
+    user.save()
+
+    return res.status(201).json({
+        status: true,
+        message: 'User berhasil di daftarkan',
+    })
+//}
+//}
+
+//}
+//export const getUsers = async(req, res) =>{
+//    try {
+//        const response = await User.findAll();
+        // res.header("Access-Control-Allow-Origin", "*");
+//        res.status(200).json(response);
+//    } catch (error) {
+//        console.log(error.message);
+//    }
+//}

@@ -1,7 +1,42 @@
 import React, { useState } from "react";
 import "../App.css";
+import axios from 'axios';
 
-const Login = () => {
+function RegistrationForm() {
+    const [formData, setFormData] = useState({
+        username: '',
+        email: '',
+        password: '',
+    });
+
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+        };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        // Send data to the server for registration
+        try {
+            const response = await fetch('/api/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+            if (response.ok) {
+                // Handle successful registration
+            } else {
+                // Handle registration error
+            }
+        } catch (error) {
+            // Handle network error
+        }
+    };
+
+    
     const [registerClicked, setRegisterClicked] = useState(true);
 
     const toggleButton = () => {
@@ -70,7 +105,7 @@ const Login = () => {
                                             className='form-control'
                                             id=''
                                             aria-label=''
-                                            placeholder='Masukkan Username'
+                                            placeholder='Username'
                                         />
                                     </div>
                                     <div className='mb-3'>
@@ -82,7 +117,7 @@ const Login = () => {
                                             className='form-control'
                                             id=''
                                             aria-label=''
-                                            placeholder='Masukkan Email'
+                                            placeholder='Email'
                                         />
                                     </div>
                                     <div className='mb-3'>
@@ -94,7 +129,7 @@ const Login = () => {
                                             className='form-control'
                                             id=''
                                             aria-label=''
-                                            placeholder='Masukkan Password'
+                                            placeholder='Password'
                                         />
                                     </div>
                                     <submit className=''>
@@ -110,4 +145,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default RegistrationForm;
